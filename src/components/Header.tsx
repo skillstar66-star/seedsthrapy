@@ -1,0 +1,121 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Phone } from "lucide-react";
+
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About Us", href: "#about" },
+  { label: "Therapies", href: "#therapies" },
+  { label: "Conditions", href: "#conditions" },
+  { label: "Resources", href: "#resources" },
+  { label: "Contact", href: "#contact" },
+];
+
+export default function Header() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 max-w-[1023px]:bg-bg/90 max-w-[1023px]:backdrop-blur-md lg:bg-bg/85 lg:backdrop-blur-xl border-b border-soft-green/60">
+      <nav
+        className="container-main flex items-center justify-between h-14 sm:h-16 md:h-20"
+        aria-label="Main navigation"
+      >
+        <a href="#home" className="flex items-center gap-2 sm:gap-3 group">
+          <img 
+            src="/images/logo.png" 
+            alt="Seeds Therapy Center" 
+            className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 object-contain"
+          />
+          <div className="hidden sm:flex flex-col">
+            <span className="text-xs sm:text-sm font-bold text-primary tracking-wide leading-tight">
+              SEEDS
+            </span>
+            <span className="text-[10px] sm:text-xs font-semibold text-secondary tracking-wide">
+              THERAPY CENTER
+            </span>
+          </div>
+        </a>
+
+        <div className="hidden lg:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-text-light hover:text-primary transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="tel:+919597469409"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 text-primary text-sm font-medium hover:bg-primary/5 transition-all duration-200"
+          >
+            <Phone className="w-4 h-4" />
+            <span>9597469409</span>
+          </a>
+          <a
+            href="#contact"
+            className="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-medium hover:bg-primary/90 transition-all duration-200 shadow-soft"
+          >
+            Book a Consultation
+          </a>
+        </div>
+
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="lg:hidden p-2.5 sm:p-2 rounded-lg hover:bg-soft-green/50 active:bg-soft-green/60 transition-colors"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+        >
+          {mobileOpen ? <X className="w-6 h-6 text-primary" /> : <Menu className="w-6 h-6 text-primary" />}
+        </button>
+      </nav>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+            className="lg:hidden border-t border-soft-green/60 bg-bg/95 backdrop-blur-md overflow-hidden"
+          >
+            <div className="px-5 sm:px-6 py-6 flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-base font-medium text-text-main hover:text-primary transition-colors py-3 px-3 rounded-lg hover:bg-soft-green/30"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <div className="pt-4 flex flex-col gap-2.5 border-t border-soft-green/40">
+                <a
+                  href="tel:+919597469409"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl border border-primary/20 text-primary text-sm font-medium active:bg-primary/5"
+                >
+                  <Phone className="w-4 h-4" />
+                  9597469409
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="px-5 py-3.5 rounded-xl bg-primary text-white text-sm font-semibold text-center active:bg-primary/90 transition-colors"
+                >
+                  Book a Consultation
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}
