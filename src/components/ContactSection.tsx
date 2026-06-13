@@ -108,8 +108,7 @@ export default function ContactSection() {
               {
                 icon: Phone,
                 label: "Call Us",
-                value: "+91 9597469409",
-                 value: "+91 9043866554",
+                value: "+91 9597469409\n+91 9043866554",
                 href: "tel:+919597469409",
               },
               {
