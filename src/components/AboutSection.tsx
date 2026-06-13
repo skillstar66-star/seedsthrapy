@@ -15,7 +15,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            className="relative hidden sm:block"
+            className="relative block mt-6 sm:mt-0"
           >
             <div className="relative w-full lg:max-w-2xl aspect-[15/16] rounded-3xl overflow-hidden bg-gradient-to-br from-soft-green/40 to-bg shadow-medium">
               <Image

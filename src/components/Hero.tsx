@@ -106,7 +106,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            className="order-2 lg:order-2 relative hidden sm:block"
+            className="order-2 lg:order-2 relative block"
           >
             <div className="relative w-full max-w-sm lg:max-w-lg aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-soft-green/60 to-bg shadow-medium">
               {/* Therapy Image */}
