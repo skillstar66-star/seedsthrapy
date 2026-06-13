@@ -3,13 +3,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },
   { label: "Therapies", href: "#therapies" },
   { label: "Conditions", href: "#conditions" },
-  { label: "Resources", href: "#resources" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -23,9 +23,13 @@ export default function Header() {
         aria-label="Main navigation"
       >
         <a href="#home" className="flex items-center gap-2 sm:gap-3 group">
-          <img 
-            src="/images/logo.png" 
+          <Image 
+            src="/images/logo.webp" 
             alt="Seeds Therapy Center" 
+            width={56}
+            height={56}
+            priority
+            loading="eager"
             className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 object-contain"
           />
           <div className="hidden sm:flex flex-col">

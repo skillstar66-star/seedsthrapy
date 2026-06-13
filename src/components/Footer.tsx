@@ -1,6 +1,7 @@
 "use client";
 
 import { Heart, Phone, Mail, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 const footerLinks = {
   navigate: [
@@ -26,7 +27,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-4 lg:pr-8">
             <div className="flex items-center gap-2 sm:gap-3 mb-4">
-              <img src="/images/logo.png" alt="Seeds Therapy Center" className="h-10 md:h-12 w-10 md:w-12 object-contain" />
+              <Image src="/images/logo.webp" alt="Seeds Therapy Center" width={48} height={48} className="h-10 md:h-12 w-10 md:w-12 object-contain" />
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-white tracking-wide">SEEDS</span>
                 <span className="text-xs font-semibold text-white/70 tracking-wider">THERAPY CENTER</span>
@@ -37,7 +38,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2 text-sm font-medium text-white/80">
               <Heart className="w-4 h-4 text-accent" />
-              <span>Care you can trust</span>
+              <span>EARLY INTERVENTION. EARLY SUPPORT.</span>
             </div>
           </div>
 
@@ -77,25 +78,25 @@ export default function Footer() {
               <li>
                 <div className="flex items-start gap-3 text-sm text-white/70">
                   <Heart className="w-4 h-4 flex-shrink-0 mt-0.5 text-white/60" />
-                  <span className="leading-relaxed">[Insert Full Local Address]</span>
+                  <span className="leading-relaxed">No-77, Babyama Women Wellness & Paediatric Centre, Siddhapudur, Coimbatore, Tamil Nadu 641044</span>
                 </div>
               </li>
               <li>
                 <a
-                  href="tel:[Insert Phone Number]"
+                  href="tel:+919597469409"
                   className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0 text-white/60" />
-                  <span>[Insert Phone Number]</span>
+                  <span>+91 9597469409</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:[Insert Email Address]"
+                  href="mailto:seedstherapycenter@gmail.com"
                   className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
                 >
                   <Mail className="w-4 h-4 flex-shrink-0 text-white/60" />
-                  <span>[Insert Email Address]</span>
+                  <span>seedstherapycenter@gmail.com</span>
                 </a>
               </li>
             </ul>

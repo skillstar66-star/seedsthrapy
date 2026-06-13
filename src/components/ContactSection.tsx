@@ -1,9 +1,73 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, ArrowRight, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { MapPin, Phone, Mail, Clock, ArrowRight, MessageCircle, CheckCircle, Loader2, AlertCircle } from "lucide-react";
+
+const WHATSAPP_NUMBER = "919597469409";
+const WEB3FORMS_KEY = "fc0324b1-52d7-4bb8-9af6-152ac442f37a";
 
 export default function ContactSection() {
+  const [contactMethod, setContactMethod] = useState<"email" | "whatsapp">("email");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (contactMethod === "whatsapp") {
+      // WhatsApp - open in a new tab with details pre-filled
+      const text = `Hello SEEDS Therapy Center,\n\nI would like to contact you.\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Message:* ${formData.message}`;
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      window.open(whatsappUrl, "_blank");
+      return;
+    }
+
+    // Email - call Web3Forms directly from browser (client-side) using FormData
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const form = new FormData();
+      form.append("access_key", WEB3FORMS_KEY);
+      form.append("subject", `New Website Inquiry - ${formData.name}`);
+      form.append("name", formData.name);
+      form.append("email", formData.email);
+      form.append("phone", formData.phone);
+      form.append("message", formData.message);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: form,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setStatus("error");
+        setErrorMessage(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      setStatus("error");
+      setErrorMessage("Network error. Please check your internet connection and try again.");
+    }
+  };
+
   return (
     <section id="contact" className="py-12 sm:py-14 md:py-28 bg-surface pb-16 sm:pb-20 md:pb-28">
       <div className="container-main">
@@ -38,20 +102,20 @@ export default function ContactSection() {
               {
                 icon: MapPin,
                 label: "Visit Us",
-                value: "[Insert Full Local Address]",
-                href: null,
+                value: "No-77, Babyama Women Wellness & Paediatric Centre, Siddhapudur, Coimbatore, Tamil Nadu 641044",
+                href: "https://maps.google.com/?q=Babyama+Women+Wellness+Coimbatore",
               },
               {
                 icon: Phone,
                 label: "Call Us",
-                value: "[Insert Phone Number]",
-                href: "tel:[Insert Phone Number]",
+                value: "+91 9597469409",
+                href: "tel:+919597469409",
               },
               {
                 icon: Mail,
                 label: "Email Us",
-                value: "[Insert Email Address]",
-                href: "mailto:[Insert Email Address]",
+                value: "seedstherapycenter@gmail.com",
+                href: "mailto:seedstherapycenter@gmail.com",
               },
               {
                 icon: Clock,
@@ -71,6 +135,8 @@ export default function ContactSection() {
                     {item.href ? (
                       <a
                         href={item.href}
+                        target={item.href.startsWith("http") ? "_blank" : undefined}
+                        rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="text-sm text-text-light hover:text-primary transition-colors whitespace-pre-line block"
                       >
                         {item.value}
@@ -85,7 +151,7 @@ export default function ContactSection() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/919597469409"
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-soft-green/60 to-soft-green/30 border border-soft-green hover:shadow-card-hover transition-all duration-200 group min-h-16 sm:min-h-auto"
@@ -107,63 +173,149 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-bg rounded-2xl p-5 sm:p-8 border border-soft-green/40 shadow-card"
+            className="bg-bg rounded-2xl p-5 sm:p-8 border border-soft-green/40 shadow-card flex flex-col justify-between"
           >
-            <h3 className="text-base sm:text-lg font-semibold text-primary mb-5 sm:mb-6">Send Us a Message</h3>
-            <form className="space-y-4 sm:space-y-5" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
-                <div>
-                  <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all text-base"
-                    placeholder="Full name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all text-base"
-                    placeholder="your@email.com"
-                  />
-                </div>
+            <div>
+              <h3 className="text-base sm:text-lg font-semibold text-primary mb-4">Send Us a Message</h3>
+
+              {/* Toggle Tab */}
+              <div className="flex bg-surface p-1 rounded-xl border border-soft-green/50 mb-6">
+                <button
+                  type="button"
+                  onClick={() => setContactMethod("email")}
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                    contactMethod === "email"
+                      ? "bg-primary text-white shadow-sm"
+                      : "text-text-light hover:text-primary"
+                  }`}
+                >
+                  <Mail className="w-4 h-4" />
+                  Email (Silent Send)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setContactMethod("whatsapp")}
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                    contactMethod === "whatsapp"
+                      ? "bg-primary text-white shadow-sm"
+                      : "text-text-light hover:text-primary"
+                  }`}
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp (Open Chat)
+                </button>
               </div>
-              <div>
-                <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all text-base"
-                  placeholder="(555) 000-0000"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
-                  How can we help?
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all resize-none text-base"
-                  placeholder="Tell us about your child and how we can support your family..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full px-6 py-4 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition-all duration-200 shadow-soft active:scale-95 text-base min-h-14"
-              >
-                Send Message
-              </button>
-            </form>
+
+              <AnimatePresence mode="wait">
+                {status === "success" ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    className="flex flex-col items-center justify-center text-center py-8 space-y-4"
+                  >
+                    <CheckCircle className="w-16 h-16 text-primary" />
+                    <h4 className="text-xl font-bold text-primary">Message Sent! 🎉</h4>
+                    <p className="text-sm text-text-light max-w-xs">
+                      Thank you for contacting us. We will get back to you as soon as possible.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setStatus("idle")}
+                      className="px-6 py-2 border border-primary text-primary rounded-xl text-sm font-semibold hover:bg-primary/5 transition-colors"
+                    >
+                      Send Another Message
+                    </button>
+                  </motion.div>
+                ) : (
+                  <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
+                    {status === "error" && (
+                      <div className="flex gap-2 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
+                        <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <span className="font-semibold">Submission failed:</span> {errorMessage}
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
+                      <div>
+                        <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
+                          Your Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all text-base"
+                          placeholder="Full name"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
+                          Email Address
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          required={contactMethod === "email"}
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all text-base"
+                          placeholder="your@email.com"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all text-base"
+                        placeholder="Phone number"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
+                        How can we help?
+                      </label>
+                      <textarea
+                        id="message"
+                        rows={4}
+                        required
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all resize-none text-base"
+                        placeholder="Tell us about your child and how we can support your family..."
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={status === "loading"}
+                      className="w-full px-6 py-4 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition-all duration-200 shadow-soft active:scale-95 text-base min-h-14 flex items-center justify-center gap-2"
+                    >
+                      {status === "loading" ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          Sending silently...
+                        </>
+                      ) : contactMethod === "email" ? (
+                        "Send Message Silently"
+                      ) : (
+                        "Open WhatsApp Chat"
+                      )}
+                    </button>
+                  </form>
+                )}
+              </AnimatePresence>
+            </div>
           </motion.div>
         </div>
       </div>

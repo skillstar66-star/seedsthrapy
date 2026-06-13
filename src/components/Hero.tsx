@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Phone } from "lucide-react";
+import Image from "next/image";
 
 const features = [
   "Child-centered approach",
@@ -33,8 +34,8 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <span className="inline-block px-3 sm:px-4 py-1.5 rounded-full bg-soft-green/70 text-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-                Early support. Early intervention.
-              </span>
+                EARLY INTERVENTION. EARLY SUPPORT.
+              </span> 
             </motion.div>
 
             <motion.h1
@@ -52,7 +53,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-base sm:text-lg md:text-lg text-text-light leading-relaxed max-w-xl mb-5 sm:mb-6"
             >
-              At Seeds Therapy Center, we provide personalized, evidence-based therapy support for children who need help with communication, development, behavior, learning, and daily life skills. Our goal is simple: to help every child grow with confidence in a safe, caring, and nurturing environment.
+              At Seeds Therapy Center, we provide personalized, evidence-based therapy support for children who need help with communication, development, behavior, learning, and daily life skills. Our goal is simple: To help every child grow with confidence in a safe, caring, and nurturing environment.
             </motion.p>
 
             <motion.div
@@ -83,14 +84,18 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="flex flex-col sm:flex-row sm:flex-wrap gap-x-8 gap-y-2.5 sm:gap-y-3"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3"
             >
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 text-secondary" />
-                  </div>
-                  <span className="text-sm text-text-light">{feature}</span>
+              {features.map((feature, index) => (
+                <div key={feature} className="flex items-center gap-3">
+                  <motion.div 
+                    animate={{ scale: [1, 1.15, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
+                    className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-sm shadow-primary/30"
+                  >
+                    <Check className="w-3 h-3 text-white stroke-[3]" />
+                  </motion.div>
+                  <span className="text-sm text-text-light font-medium">{feature}</span>
                 </div>
               ))}
             </motion.div>
@@ -105,10 +110,14 @@ export default function Hero() {
           >
             <div className="relative w-full max-w-sm lg:max-w-lg aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-soft-green/60 to-bg shadow-medium">
               {/* Therapy Image */}
-              <img
-                src="/images/hero.png"
+              <Image
+                src="/images/hero.webp"
                 alt="Child occupational therapy session at Seeds Therapy Center"
-                className="w-full h-full object-cover"
+                fill
+                priority
+                loading="eager"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
 
               {/* Floating accent shapes */}

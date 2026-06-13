@@ -23,13 +23,13 @@ const jsonLd = {
       "@id": "https://seedstherapy.com/#organization",
       "name": "Seeds Therapy Center",
       "url": "https://seedstherapy.com",
-      "telephone": "[Insert Phone Number]",
+      "telephone": "+919597469409",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "[Insert Full Local Address]",
-        "addressLocality": "[City]",
-        "addressRegion": "[State]",
-        "postalCode": "[Zip Code]",
+        "streetAddress": "No-77, Babyama Women Wellness & Paediatric Centre, Siddhapudur",
+        "addressLocality": "Coimbatore",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "641044",
         "addressCountry": "IN"
       }
     },

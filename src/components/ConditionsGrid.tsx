@@ -64,8 +64,8 @@ export default function ConditionsGrid() {
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                   className="flex items-center gap-3 p-4 rounded-xl bg-surface border border-soft-green/30 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
-                    <Check className="w-4 h-4 text-secondary" />
+                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 shadow-sm shadow-primary/30">
+                    <Check className="w-4 h-4 text-white stroke-[3]" />
                   </div>
                   <span className="text-sm font-medium text-text-main">{condition}</span>
                 </motion.div>

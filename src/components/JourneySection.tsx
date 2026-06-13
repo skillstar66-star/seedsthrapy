@@ -117,9 +117,7 @@ export default function JourneySection() {
                           className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-secondary"
                             }`}
                         />
-                        <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center shadow-soft">
-                          {item.step}
-                        </span>
+
                       </button>
                     </div>
 

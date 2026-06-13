@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, Heart, Sun, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
@@ -17,10 +18,12 @@ export default function AboutSection() {
             className="relative hidden sm:block"
           >
             <div className="relative w-full lg:max-w-2xl aspect-[15/16] rounded-3xl overflow-hidden bg-gradient-to-br from-soft-green/40 to-bg shadow-medium">
-              <img
-                src="/images/poster.png"
+              <Image
+                src="/images/poster.webp"
                 alt="Seeds Therapy Center - Grow Today, Thrive Tomorrow"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
 
