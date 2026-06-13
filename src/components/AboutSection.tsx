@@ -74,7 +74,7 @@ export default function AboutSection() {
 
             <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-3 sm:gap-4">
               {[
-                { label: "Strengths-Based Approach", icon: Sun },
+                { label: "Evidence-Based Approach", icon: Sun },
                 { label: "Whole Child Focus", icon: Heart },
               ].map((item) => {
                 const Icon = item.icon;
