@@ -109,6 +109,7 @@ export default function ContactSection() {
                 icon: Phone,
                 label: "Call Us",
                 value: "+91 9597469409",
+                 value: "+91 9043866554",
                 href: "tel:+919597469409",
               },
               {
@@ -119,7 +120,7 @@ export default function ContactSection() {
               },
               {
                 icon: Clock,
-                label: "Business Hours",
+                label: "Therapy Session Timing",
                 value: "Mon - Fri: 10:00 AM - 8:00 PM\nSat: 10:00 AM - 8:00 PM",
                 href: null,
               },
