@@ -92,6 +92,15 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="tel:+919043866554"
+                  className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  <Phone className="w-4 h-4 flex-shrink-0 text-white/60" />
+                  <span>+91 9043866554</span>
+                </a>
+              </li>
+              <li>
+                <a
                   href="mailto:seedstherapycenter@gmail.com"
                   className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
                 >
