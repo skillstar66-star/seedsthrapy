@@ -19,7 +19,7 @@ export default function AboutSection() {
           >
             <div className="relative w-full lg:max-w-2xl aspect-[15/16] rounded-3xl overflow-hidden bg-gradient-to-br from-soft-green/40 to-bg shadow-medium">
               <Image
-                src="/images/poster.webp"
+                src="/images/about-poster.jpg"
                 alt="Seeds Therapy Center - Grow Today, Thrive Tomorrow"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
