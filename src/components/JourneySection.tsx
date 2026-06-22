@@ -104,6 +104,7 @@ export default function JourneySection() {
                       )}
 
                       <button
+                        suppressHydrationWarning
                         onClick={() => setActiveStep(isActive ? null : item.step)}
                         onMouseEnter={() => setActiveStep(item.step)}
                         onMouseLeave={() => setActiveStep(null)}

@@ -141,6 +141,7 @@ export default function Testimonials() {
           <div className="flex justify-center gap-2 mt-4">
             {testimonials.map((_, index) => (
               <button
+                suppressHydrationWarning
                 key={index}
                 onClick={() => goTo(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
@@ -200,6 +201,7 @@ export default function Testimonials() {
               <div className="flex gap-2">
                 {testimonials.map((_, index) => (
                   <button
+                    suppressHydrationWarning
                     key={index}
                     onClick={() => goTo(index)}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
@@ -213,6 +215,7 @@ export default function Testimonials() {
               </div>
               <div className="flex gap-2">
                 <button
+                  suppressHydrationWarning
                   onClick={goPrev}
                   className="w-10 h-10 rounded-full bg-soft-green/50 flex items-center justify-center hover:bg-soft-green transition-colors"
                   aria-label="Previous testimonial"
@@ -220,6 +223,7 @@ export default function Testimonials() {
                   <ChevronLeft className="w-5 h-5 text-primary" />
                 </button>
                 <button
+                  suppressHydrationWarning
                   onClick={goNext}
                   className="w-10 h-10 rounded-full bg-soft-green/50 flex items-center justify-center hover:bg-soft-green transition-colors"
                   aria-label="Next testimonial"

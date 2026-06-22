@@ -71,6 +71,7 @@ export default function Header() {
         </div>
 
         <button
+          suppressHydrationWarning
           onClick={() => setMobileOpen(!mobileOpen)}
           className="lg:hidden p-2.5 sm:p-2 rounded-lg hover:bg-soft-green/50 active:bg-soft-green/60 transition-colors"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}

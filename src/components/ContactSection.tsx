@@ -181,6 +181,7 @@ export default function ContactSection() {
               {/* Toggle Tab */}
               <div className="flex bg-surface p-1 rounded-xl border border-soft-green/50 mb-6">
                 <button
+                  suppressHydrationWarning
                   type="button"
                   onClick={() => setContactMethod("email")}
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all ${
@@ -193,6 +194,7 @@ export default function ContactSection() {
                   Email (Silent Send)
                 </button>
                 <button
+                  suppressHydrationWarning
                   type="button"
                   onClick={() => setContactMethod("whatsapp")}
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all ${
@@ -220,6 +222,7 @@ export default function ContactSection() {
                       Thank you for contacting us. We will get back to you as soon as possible.
                     </p>
                     <button
+                      suppressHydrationWarning
                       type="button"
                       onClick={() => setStatus("idle")}
                       className="px-6 py-2 border border-primary text-primary rounded-xl text-sm font-semibold hover:bg-primary/5 transition-colors"
@@ -244,6 +247,7 @@ export default function ContactSection() {
                           Your Name
                         </label>
                         <input
+                          suppressHydrationWarning
                           type="text"
                           id="name"
                           required
@@ -258,6 +262,7 @@ export default function ContactSection() {
                           Email Address
                         </label>
                         <input
+                          suppressHydrationWarning
                           type="email"
                           id="email"
                           required={contactMethod === "email"}
@@ -273,6 +278,7 @@ export default function ContactSection() {
                         Phone Number
                       </label>
                       <input
+                        suppressHydrationWarning
                         type="tel"
                         id="phone"
                         required
@@ -287,6 +293,7 @@ export default function ContactSection() {
                         How can we help?
                       </label>
                       <textarea
+                        suppressHydrationWarning
                         id="message"
                         rows={4}
                         required
@@ -297,6 +304,7 @@ export default function ContactSection() {
                       />
                     </div>
                     <button
+                      suppressHydrationWarning
                       type="submit"
                       disabled={status === "loading"}
                       className="w-full px-6 py-4 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition-all duration-200 shadow-soft active:scale-95 text-base min-h-14 flex items-center justify-center gap-2"

@@ -111,6 +111,7 @@ export default function PopupForm() {
           >
             <div className="absolute top-4 right-4 z-10">
               <button
+                suppressHydrationWarning
                 onClick={() => setIsOpen(false)}
                 className="p-1.5 bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full transition-colors"
               >
@@ -127,6 +128,7 @@ export default function PopupForm() {
               {/* Toggle Tab */}
               <div className="flex bg-surface p-1 rounded-xl border border-soft-green/50 mb-6">
                 <button
+                  suppressHydrationWarning
                   type="button"
                   onClick={() => setContactMethod("email")}
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all ${
@@ -139,6 +141,7 @@ export default function PopupForm() {
                   Email
                 </button>
                 <button
+                  suppressHydrationWarning
                   type="button"
                   onClick={() => setContactMethod("whatsapp")}
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all ${
@@ -183,6 +186,7 @@ export default function PopupForm() {
                           Parent/Guardian Name
                         </label>
                         <input
+                          suppressHydrationWarning
                           type="text"
                           id="popup-parentName"
                           required
@@ -197,6 +201,7 @@ export default function PopupForm() {
                           Child's Name
                         </label>
                         <input
+                          suppressHydrationWarning
                           type="text"
                           id="popup-childName"
                           value={formData.childName}
@@ -213,6 +218,7 @@ export default function PopupForm() {
                           Phone Number
                         </label>
                         <input
+                          suppressHydrationWarning
                           type="tel"
                           id="popup-phone"
                           required
@@ -227,6 +233,7 @@ export default function PopupForm() {
                           Email Address
                         </label>
                         <input
+                          suppressHydrationWarning
                           type="email"
                           id="popup-email"
                           required={contactMethod === "email"}
@@ -243,6 +250,7 @@ export default function PopupForm() {
                         Primary Concern
                       </label>
                       <select
+                        suppressHydrationWarning
                         id="popup-concern"
                         value={formData.concern}
                         onChange={handleChange}
@@ -262,6 +270,7 @@ export default function PopupForm() {
                         Additional Message (Optional)
                       </label>
                       <textarea
+                        suppressHydrationWarning
                         id="popup-message"
                         rows={2}
                         value={formData.message}
@@ -272,6 +281,7 @@ export default function PopupForm() {
                     </div>
 
                     <button
+                      suppressHydrationWarning
                       type="submit"
                       disabled={status === "loading"}
                       className="w-full py-3.5 px-4 mt-2 bg-primary text-white rounded-lg font-semibold gradient-btn-primary hover:gradient-btn-hover transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"

@@ -65,6 +65,7 @@ export default function FAQ() {
                 className="rounded-2xl border border-soft-green/40 overflow-hidden shadow-soft"
               >
                 <button
+                  suppressHydrationWarning
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex items-center justify-between gap-3 sm:gap-4 px-4 sm:px-6 py-4 sm:py-5 text-left bg-gradient-to-r from-bg to-surface hover:from-soft-green/20 hover:to-soft-green/10 transition-colors duration-200 min-h-14 sm:min-h-auto active:bg-soft-green/30"
                   aria-expanded={isOpen}

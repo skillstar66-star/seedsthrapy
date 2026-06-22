@@ -63,7 +63,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <Script
           id="remove-fdprocessedid"
           dangerouslySetInnerHTML={{
