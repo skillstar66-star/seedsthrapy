@@ -17,7 +17,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 max-w-[1023px]:bg-bg/90 max-w-[1023px]:backdrop-blur-md lg:bg-bg/85 lg:backdrop-blur-xl border-b border-soft-green/60">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-md lg:bg-bg/85 lg:backdrop-blur-xl border-b border-soft-green/60">
       <nav
         className="container-main flex items-center justify-between h-14 sm:h-16 md:h-20"
         aria-label="Main navigation"
