@@ -24,7 +24,7 @@ export default function Header() {
       >
         <a href="#home" className="flex items-center gap-2 sm:gap-3 group">
           <Image 
-            src="/images/logo.webp" 
+            src="/images/logo.png" 
             alt="Seeds Therapy Center" 
             width={56}
             height={56}
