@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "behavioral therapy for kids",
   ],
   alternates: {
-    canonical: "https://seedstherapy.com", // Replace with real domain later
+    canonical: "https://www.seedstherapycenter.org",
   },
   openGraph: {
     title: "Seeds Therapy | Helping Children Thrive",
@@ -38,12 +38,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Seeds Therapy Center",
+    images: [
+      {
+        url: "https://www.seedstherapycenter.org/images/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Seeds Therapy Center Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Seeds Therapy | Helping Children Thrive",
     description:
       "Personalized pediatric therapy programs designed to help children build confidence, independence, and life skills.",
+    images: ["https://www.seedstherapycenter.org/images/logo.png"],
   },
   robots: {
     index: true,
@@ -51,10 +60,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", type: "image/x-icon" },
       { url: "/images/logo.png", type: "image/png" },
     ],
-    shortcut: "/favicon.svg",
+    shortcut: "/favicon.ico",
     apple: "/images/logo.png",
   },
   verification: {
