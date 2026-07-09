@@ -1,2 +1,7 @@
-// Unused API route. Disabled for static HTML export compatibility on GitHub Pages.
+import { NextResponse } from "next/server";
+
 export const dynamic = "force-static";
+
+export async function GET() {
+  return NextResponse.json({ status: "disabled" });
+}
