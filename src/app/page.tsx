@@ -20,9 +20,9 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "MedicalBusiness",
-      "@id": "https://seedstherapy.com/#organization",
+      "@id": "https://www.seedstherapycenter.org/#organization",
       "name": "Seeds Therapy Center",
-      "url": "https://seedstherapy.com",
+      "url": "https://www.seedstherapycenter.org",
       "telephone": "+919597469409",
       "address": {
         "@type": "PostalAddress",
@@ -37,28 +37,28 @@ const jsonLd = {
       "@type": "Service",
       "serviceType": "Occupational Therapy",
       "provider": {
-        "@id": "https://seedstherapy.com/#organization"
+        "@id": "https://www.seedstherapycenter.org/#organization"
       }
     },
     {
       "@type": "Service",
       "serviceType": "Speech Therapy",
       "provider": {
-        "@id": "https://seedstherapy.com/#organization"
+        "@id": "https://www.seedstherapycenter.org/#organization"
       }
     },
     {
       "@type": "Service",
       "serviceType": "Behavioral Therapy",
       "provider": {
-        "@id": "https://seedstherapy.com/#organization"
+        "@id": "https://www.seedstherapycenter.org/#organization"
       }
     },
     {
       "@type": "Service",
       "serviceType": "Early Intervention",
       "provider": {
-        "@id": "https://seedstherapy.com/#organization"
+        "@id": "https://www.seedstherapycenter.org/#organization"
       }
     },
     {

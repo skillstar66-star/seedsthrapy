@@ -59,13 +59,11 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico", type: "image/x-icon" },
-      { url: "/images/logo.png", type: "image/png" },
-    ],
+    icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/images/logo.png",
+    apple: "/apple-icon.png"
   },
+  manifest: "/manifest.webmanifest",
   verification: {
     google: "pOcD3IAbG-uf8b_nfhhlwaI7J_4dPvxWw0XI2ymdRHA",
   },
