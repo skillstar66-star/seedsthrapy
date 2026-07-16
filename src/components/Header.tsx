@@ -6,11 +6,11 @@ import { Menu, X, Phone } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Therapies", href: "#therapies" },
-  { label: "Conditions", href: "#conditions" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Therapies", href: "/therapies" },
+  { label: "Conditions", href: "/conditions" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
@@ -22,7 +22,7 @@ export default function Header() {
         className="container-main flex items-center justify-between h-14 sm:h-16 md:h-20"
         aria-label="Main navigation"
       >
-        <a href="#home" className="flex items-center gap-2 sm:gap-3 group">
+        <a href="/" className="flex items-center gap-2 sm:gap-3 group">
           <Image 
             src="/images/logo.png" 
             alt="Seeds Therapy Center" 

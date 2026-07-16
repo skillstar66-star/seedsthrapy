@@ -5,11 +5,11 @@ import Image from "next/image";
 
 const footerLinks = {
   navigate: [
-    { label: "Home", href: "#home" },
-    { label: "About Us", href: "#about" },
-    { label: "Our Therapies", href: "#therapies" },
-    { label: "Conditions We Support", href: "#conditions" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Our Therapies", href: "/therapies" },
+    { label: "Conditions We Support", href: "/conditions" },
+    { label: "Contact", href: "/contact" },
   ],
   services: [
     "Occupational Therapy",
