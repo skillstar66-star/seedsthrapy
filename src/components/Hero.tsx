@@ -64,14 +64,14 @@ export default function Hero() {
             >
               <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 mb-1.5">
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="group inline-flex items-center justify-center sm:justify-start gap-1.5 px-4 py-2 sm:py-2 rounded-full bg-primary text-white font-semibold sm:font-medium text-xs sm:text-sm hover:bg-primary/90 transition-all duration-200 shadow-medium hover:shadow-card-hover active:scale-95"
                 >
                   Book a Consultation
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
-                  href="#about"
+                  href="/about"
                   className="inline-flex items-center justify-center gap-1.5 px-4 py-2 sm:py-2 rounded-full border-2 border-primary/15 text-primary font-semibold sm:font-medium text-xs sm:text-sm hover:bg-primary/5 transition-all duration-200 active:scale-95"
                 >
                   Watch Our Story

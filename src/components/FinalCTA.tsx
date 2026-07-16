@@ -35,7 +35,7 @@ export default function FinalCTA() {
 
           <div className="flex flex-col sm:flex-row sm:justify-center gap-3 sm:gap-4">
             <a
-              href="#contact"
+              href="/contact"
               className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-4 rounded-full bg-primary text-white font-semibold text-base sm:text-base hover:bg-primary/90 transition-all duration-200 shadow-medium hover:shadow-card-hover active:scale-95"
             >
               Schedule Assessment

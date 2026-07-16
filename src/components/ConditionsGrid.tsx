@@ -39,7 +39,7 @@ export default function ConditionsGrid() {
               If your child is struggling with speech, behavior, movement, learning, or social interaction, early support can make a meaningful difference. Our team works with children who need care, structure, and personalized intervention.
             </p>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-medium text-sm hover:bg-primary/90 transition-all shadow-soft"
             >
               View All Conditions

@@ -88,7 +88,7 @@ export default function AboutSection() {
             </div>
 
             <a
-              href="#conditions"
+              href="/conditions"
               className="group mt-6 sm:mt-6 inline-flex items-center gap-2 text-sm text-primary font-medium hover:gap-3 transition-all"
             >
               Learn how we can help your child

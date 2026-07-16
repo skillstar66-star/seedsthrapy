@@ -63,7 +63,7 @@ export default function Header() {
             <span>9597469409</span>
           </a>
           <a
-            href="#contact"
+            href="/contact"
             className="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-medium hover:bg-primary/90 transition-all duration-200 shadow-soft"
           >
             Book a Consultation
@@ -110,7 +110,7 @@ export default function Header() {
                   9597469409
                 </a>
                 <a
-                  href="#contact"
+                  href="/contact"
                   onClick={() => setMobileOpen(false)}
                   className="px-5 py-3.5 rounded-xl bg-primary text-white text-sm font-semibold text-center active:bg-primary/90 transition-colors"
                 >
