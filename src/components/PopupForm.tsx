@@ -58,7 +58,8 @@ export default function PopupForm() {
     try {
       const form = new FormData();
       form.append("access_key", WEB3FORMS_KEY);
-      form.append("subject", `New Assessment Request - ${formData.parentName}`);
+      form.append("from_name", "NEW PATIENT ENQUIRY");
+      form.append("subject", `NEW PATIENT ENQUIRY - Assessment Request (${formData.parentName})`);
       form.append("parent_name", formData.parentName);
       form.append("child_name", formData.childName);
       form.append("phone", formData.phone);
