@@ -41,8 +41,8 @@ export default function ContactSection() {
     try {
       const form = new FormData();
       form.append("access_key", WEB3FORMS_KEY);
-      form.append("from_name", formData.name || "Website Inquiry");
-      form.append("subject", `New Inquiry from ${formData.name}`);
+      form.append("from_name", "NEW PATIENT ENQUIRY");
+      form.append("subject", `NEW PATIENT ENQUIRY - Website Inquiry (${formData.name})`);
       form.append("name", formData.name);
       form.append("email", formData.email);
       form.append("phone", formData.phone);
