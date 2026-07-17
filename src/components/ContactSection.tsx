@@ -4,8 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, ArrowRight, MessageCircle, CheckCircle, Loader2, AlertCircle } from "lucide-react";
 
-const WHATSAPP_NUMBER = "919597469409";
-const WEB3FORMS_KEY = "fc0324b1-52d7-4bb8-9af6-152ac442f37a";
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919597469409";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "fc0324b1-52d7-4bb8-9af6-152ac442f37a";
 
 export default function ContactSection() {
   const [contactMethod, setContactMethod] = useState<"email" | "whatsapp">("email");
@@ -41,8 +41,8 @@ export default function ContactSection() {
     try {
       const form = new FormData();
       form.append("access_key", WEB3FORMS_KEY);
-      form.append("from_name", "NEW PATIENT ENQUIRY");
-      form.append("subject", `NEW PATIENT ENQUIRY - Website Inquiry (${formData.name})`);
+      form.append("from_name", formData.name || "Website Inquiry");
+      form.append("subject", `New Inquiry from ${formData.name}`);
       form.append("name", formData.name);
       form.append("email", formData.email);
       form.append("phone", formData.phone);
