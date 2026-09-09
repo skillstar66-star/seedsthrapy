@@ -5,11 +5,14 @@ import {
   Stethoscope,
   Speech,
   Brain,
+  Baby,
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
 
-const services = [
+import Link from "next/link";
+
+const primaryServices = [
   {
     title: "Occupational Therapy",
     desc: "Helping children build the skills they need for everyday life, school readiness, independence, fine motor development, sensory regulation, and functional play.",
@@ -23,7 +26,7 @@ const services = [
       "Self-care skills",
       "Motor coordination",
     ],
-    link: "#contact", // Learn more link
+    link: "/therapies/occupational-therapy",
   },
   {
     title: "Speech Therapy",
@@ -38,7 +41,7 @@ const services = [
       "Stammering or fluency challenges",
       "Difficulty expressing needs",
     ],
-    link: "#contact",
+    link: "/therapies/speech-therapy",
   },
   {
     title: "Behavioral Therapy",
@@ -53,11 +56,37 @@ const services = [
       "Impulse control",
       "Adaptation to school and home settings",
     ],
-    link: "#contact",
+    link: "/therapies/behavioral-therapy",
   },
 ];
 
-export default function ServicesSection() {
+const earlyInterventionService = {
+  title: "Early Intervention",
+  desc: "Providing children with the right developmental support during their early years to help them learn, grow, communicate, and build essential life skills.",
+  icon: Baby,
+  bestFor: [
+    "Early milestone delays",
+    "Speech and language support",
+    "Motor and movement skills",
+    "Sensory processing",
+    "Social play and interaction",
+    "Preschool readiness",
+    "Parent guidance & home strategies",
+  ],
+  link: "/therapies/early-intervention",
+};
+
+interface ServicesSectionProps {
+  showEarlyIntervention?: boolean;
+}
+
+export default function ServicesSection({
+  showEarlyIntervention = false,
+}: ServicesSectionProps) {
+  const services = showEarlyIntervention
+    ? [...primaryServices, earlyInterventionService]
+    : primaryServices;
+
   return (
     <section id="therapies" className="py-12 sm:py-16 md:py-28 bg-surface">
       <div className="container-main">
@@ -111,10 +140,10 @@ export default function ServicesSection() {
                     </ul>
                   </div>
 
-                  <a href={service.link} className="inline-flex items-center gap-2 text-primary font-semibold text-sm group">
-                    Learn More
+                  <Link href={service.link} className="inline-flex items-center gap-2 text-primary font-semibold text-sm group hover:text-secondary transition-colors">
+                    Learn More & Details
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                 </motion.div>
               );
             })}
@@ -122,7 +151,13 @@ export default function ServicesSection() {
         </div>
 
         {/* Desktop: Standard Grid */}
-        <div className="hidden md:grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div
+          className={`hidden md:grid gap-6 ${
+            showEarlyIntervention
+              ? "grid-cols-1 md:grid-cols-2 xl:grid-cols-4"
+              : "grid-cols-1 lg:grid-cols-3"
+          }`}
+        >
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -153,10 +188,10 @@ export default function ServicesSection() {
                   </ul>
                 </div>
 
-                <a href={service.link} className="inline-flex items-center gap-2 text-primary font-semibold group-hover:text-secondary transition-colors mt-auto">
-                  Learn More
+                <Link href={service.link} className="inline-flex items-center gap-2 text-primary font-semibold group-hover:text-secondary transition-colors mt-auto">
+                  Learn More & Details
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </motion.div>
             );
           })}

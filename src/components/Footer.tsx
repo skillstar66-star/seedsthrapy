@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart, Phone, Mail, MessageCircle } from "lucide-react";
+import { Heart, Phone, Mail } from "lucide-react";
 import Image from "next/image";
 
 const footerLinks = {
@@ -12,10 +12,11 @@ const footerLinks = {
     { label: "Contact", href: "/contact" },
   ],
   services: [
-    "Occupational Therapy",
-    "Speech Therapy",
-    "Behavioral Therapy",
-    "Early Intervention",
+    { label: "Occupational Therapy", href: "/therapies/occupational-therapy" },
+    { label: "Speech Therapy", href: "/therapies/speech-therapy" },
+    { label: "Behavioral Therapy", href: "/therapies/behavioral-therapy" },
+    { label: "Early Intervention", href: "/therapies/early-intervention" },
+    { label: "All Therapies", href: "/therapies" },
   ],
 };
 
@@ -61,11 +62,16 @@ export default function Footer() {
 
           {/* Services */}
           <div className="lg:col-span-3">
-            <h4 className="text-sm font-bold text-white mb-4 uppercase tracking-wider">Services</h4>
+            <h4 className="text-sm font-bold text-white mb-4 uppercase tracking-wider">Therapies</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((service) => (
-                <li key={service}>
-                  <span className="text-sm text-white/70">{service}</span>
+                <li key={service.label}>
+                  <a
+                    href={service.href}
+                    className="text-sm text-white/70 hover:text-white transition-colors"
+                  >
+                    {service.label}
+                  </a>
                 </li>
               ))}
             </ul>

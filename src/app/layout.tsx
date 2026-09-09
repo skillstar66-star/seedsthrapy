@@ -13,28 +13,30 @@ import Script from "next/script";
 export const viewport = "width=device-width, initial-scale=1";
 
 export const metadata: Metadata = {
-  title: "Seeds Therapy | Helping Children Thrive",
+  title: "Child Therapy Center in Coimbatore | Seeds Therapy Center",
   description:
-    "Personalized pediatric therapy programs designed to help children build confidence, independence, communication, learning, and everyday life skills.",
+    "Seeds Therapy Center is a Best therapy center in Coimbatore offering occupational therapy, speech therapy, behavioral therapy, and early intervention.",
   keywords: [
-    "kids therapy center",
-    "occupational therapy for children",
-    "autism therapy",
-    "ADHD therapy",
-    "child development center",
-    "pediatric occupational therapy",
-    "early intervention program",
-    "developmental therapy for kids",
-    "speech therapy for children",
-    "behavioral therapy for kids",
+    "best therapy center",
+    "therapy center",
+    "Therapy center in Coimbatore",
+    "best therapy center in Coimbatore",
+    "Best child therapy center in Coimbatore",
+    "child therapy center",
+    "Best pediatric therapy center in Coimbatore",
+    "best child therapy center Coimbatore",
+    "Best developmental delay therapy in Coimbatore",
+    "child development center in Coimbatore",
+    "ADHD therapy in Coimbatore",
+    "ADHD therapy for childrens",
   ],
   alternates: {
     canonical: "https://www.seedstherapycenter.org",
   },
   openGraph: {
-    title: "Seeds Therapy | Helping Children Thrive",
+    title: "Child Therapy Center in Coimbatore | Seeds Therapy Center",
     description:
-      "Personalized pediatric therapy programs designed to help children build confidence, independence, and life skills.",
+      "Seeds Therapy Center is a child therapy center in Coimbatore offering occupational therapy, speech therapy, behavioral therapy, and early intervention.",
     type: "website",
     locale: "en_US",
     siteName: "Seeds Therapy Center",
@@ -49,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seeds Therapy | Helping Children Thrive",
+    title: "Child Therapy Center in Coimbatore | Seeds Therapy Center",
     description:
-      "Personalized pediatric therapy programs designed to help children build confidence, independence, and life skills.",
+      "Seeds Therapy Center is a child therapy center in Coimbatore offering occupational therapy, speech therapy, behavioral therapy, and early intervention.",
     images: ["https://www.seedstherapycenter.org/images/logo.png"],
   },
   robots: {

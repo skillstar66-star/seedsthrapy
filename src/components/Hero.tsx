@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, ArrowRight, Phone } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const features = [
@@ -44,7 +44,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-balance text-primary mb-1.5 sm:mb-2"
             >
-              Understanding. Supporting. Helping Them Thrive.
+              Best Pediatric Occupational Therapy Center in Coimbatore
             </motion.h1>
 
             <motion.p
@@ -53,7 +53,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-xs sm:text-sm md:text-base text-text-light leading-relaxed max-w-lg mb-3 sm:mb-4"
             >
-              At Seeds Therapy Center, we provide personalized, evidence-based therapy support for children who need help with communication, development, behavior, learning, and daily life skills. Our goal is simple: To help every child grow with confidence in a safe, caring, and nurturing environment.
+              Seeds Therapy Center is a best therapy center in Coimbatore, offering Speech Therapy, Occupational Therapy and Behavior Therapy for children. We provide personalized care to support communication, development and confidence, making us a trusted choice for the best therapy services in Coimbatore.
             </motion.p>
 
             <motion.div

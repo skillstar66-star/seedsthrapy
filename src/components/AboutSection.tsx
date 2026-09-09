@@ -26,25 +26,6 @@ export default function AboutSection() {
                 className="object-cover"
               />
             </div>
-
-            {/* Floating card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="absolute -bottom-4 -right-4 bg-surface rounded-xl px-4 sm:px-5 py-3 sm:py-4 shadow-medium border border-soft-green/40 hidden md:block"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
-                  <Heart className="w-5 h-5 text-accent" />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-primary">Nurturing Potential</div>
-                  <div className="text-xs text-text-light">Every child can thrive</div>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right: Content */}
@@ -64,11 +45,17 @@ export default function AboutSection() {
             </h2>
 
             <div className="space-y-3 sm:space-y-4 text-text-light leading-relaxed">
-              <p className="text-base">
-                At Seeds Therapy Center, we believe that every child deserves the chance to reach their full potential. We work closely with parents to understand developmental concerns, identify areas of support, and create a care plan that is practical, personalized, and focused on real progress.
+              <p className="text-sm sm:text-base">
+                Seeds Therapy Center is a child-focused therapy and early intervention center in Coimbatore dedicated to supporting children in their communication, development, behavior, learning, sensory processing, and everyday skills.
               </p>
-              <p className="text-base">
-                Our mission is to create a space where children feel safe, understood, and encouraged, while parents feel supported, informed, and confident in the journey ahead.
+              <p className="text-sm sm:text-base">
+                We believe that no child is the same and that each child requires a unique approach to support them according to their strengths, challenges, interests and developmental goals.
+              </p>
+              <p className="text-sm sm:text-base">
+                Our staff implements child-centered and evidence-based Occupational Therapy, Speech Therapy, Behavioral Therapy and Early Intervention services. We also feel there is a significant part for the parents in a child&apos;s development and actively strive to involve them in their child&apos;s life, communicate with them regularly and give them guidance that can help to take their child&apos;s development beyond therapy.
+              </p>
+              <p className="text-sm sm:text-base">
+                We will provide a secure, nurturing, caring place for children to feel understood and supported and for families to be clear and guided on their child&apos;s development journey.
               </p>
             </div>
 
