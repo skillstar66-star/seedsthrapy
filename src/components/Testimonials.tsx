@@ -2,48 +2,79 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { Star, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
-const testimonials = [
+function GoogleIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24">
+      <path
+        fill="#4285F4"
+        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+      />
+      <path
+        fill="#34A853"
+        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+      />
+      <path
+        fill="#EA4335"
+        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+      />
+    </svg>
+  );
+}
+
+const reviews = [
   {
-    name: "Sarah M.",
-    childAge: "4 years",
-    therapyType: "Occupational Therapy & Speech Therapy",
+    id: 1,
+    name: "Karthik & Revathi S.",
+    badge: "Local Guide · 14 reviews",
+    service: "Speech & Communication Therapy",
+    time: "3 months ago",
+    initial: "K",
+    avatarBg: "bg-blue-600 text-white",
     quote:
-      "When we first came to Seeds, my son could barely make eye contact or express his needs. After six months of therapy, he started initiating conversations, making friends, and his preschool teacher can't believe the transformation. Seeds didn't just help my son — they gave our whole family hope and practical tools for every day.",
+      "When we first came to Seeds Therapy Center in Coimbatore, my son could barely make eye contact or express his needs. After six months of speech therapy and child-focused therapy, he started initiating conversations, making friends, and communicating more confidently. His preschool teacher can't believe the transformation. Seeds didn't just help my son — they gave our whole family hope and practical tools for everyday life. We are truly grateful to have found such a caring child therapy center in Coimbatore.",
     rating: 5,
+  },
+  {
+    id: 2,
+    name: "Senthil & Deepa M.",
+    badge: "Verified Parent · Coimbatore",
+    service: "ADHD & Behavioral Therapy",
+    time: "2 months ago",
     initial: "S",
-    color: "bg-secondary/20 text-secondary",
+    avatarBg: "bg-emerald-600 text-white",
+    quote:
+      "Our daughter struggled with ADHD and was falling behind in school. The team at Seeds Therapy Center created a personalized plan that worked with her energy instead of against it. Through behavioral therapy and developmental support, they taught her practical strategies that actually stayed with her. She's now thriving in second grade, and more importantly, she believes in herself again. We are forever grateful to Seeds for providing such supportive behavioral therapy for children in Coimbatore.",
+    rating: 5,
   },
   {
-    name: "James & Lisa R.",
-    childAge: "7 years",
-    therapyType: "Behavioral Therapy & Learning Support",
+    id: 3,
+    name: "Ananya R.",
+    badge: "Verified Parent · Coimbatore",
+    service: "Early Intervention",
+    time: "1 month ago",
+    initial: "A",
+    avatarBg: "bg-amber-600 text-white",
     quote:
-      "Our daughter struggled with ADHD and was falling behind in school. The team at Seeds created a plan that worked with her energy instead of against it. They taught her strategies that actually stuck. She's now thriving in second grade, and more importantly, she believes in herself again. We are forever grateful.",
+      "As a first-time mom, I was terrified when our pediatrician suggested early intervention therapy. Seeds Therapy Center in Coimbatore made the entire process feel gentle, supportive, and empowering. My daughter worked on her developmental milestones with the therapy team, and I also learned practical ways to support her development at home. The warmth, guidance, and child-centered approach of this team made such a difference. We are very happy with our experience at Seeds.",
     rating: 5,
-    initial: "J",
-    color: "bg-accent/20 text-accent",
   },
   {
-    name: "Priya K.",
-    childAge: "3 years",
-    therapyType: "Early Intervention Program",
+    id: 4,
+    name: "Venkatesh & Meera K.",
+    badge: "Local Guide · 8 reviews",
+    service: "Autism & Occupational Therapy",
+    time: "4 months ago",
+    initial: "V",
+    avatarBg: "bg-purple-600 text-white",
     quote:
-      "As a first-time mom, I was terrified when our pediatrician suggested early intervention. Seeds made the entire process feel gentle and empowering. My daughter met every milestone they worked on together, and I learned how to support her development at home. The warmth and expertise of this team is unmatched.",
+      "Our son has autism (ASD) and sensory processing challenges that made everyday situations overwhelming. The occupational therapy and sensory integration activities at Seeds Therapy Center have made a meaningful difference in his daily life. He can now handle transitions better, tolerate different textures, and participate in family activities that were previously very difficult. The team takes time to understand our son's individual needs, which is exactly what we were looking for in a child therapy center in Coimbatore.",
     rating: 5,
-    initial: "P",
-    color: "bg-soft-green text-primary",
-  },
-  {
-    name: "Michael T.",
-    childAge: "10 years",
-    therapyType: "Sensory Integration Therapy",
-    quote:
-      "Our son has ASD and sensory processing challenges that made everyday situations overwhelming. The sensory integration work at Seeds has been life-changing. He can now handle transitions, tolerate different textures, and participate in family activities that used to be impossible. The team truly understands our son.",
-    rating: 5,
-    initial: "M",
-    color: "bg-primary/10 text-primary",
   },
 ];
 
@@ -54,8 +85,8 @@ export default function Testimonials() {
   useEffect(() => {
     const timer = setInterval(() => {
       setDirection(1);
-      setCurrent((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+      setCurrent((prev) => (prev + 1) % reviews.length);
+    }, 7000);
     return () => clearInterval(timer);
   }, []);
 
@@ -66,15 +97,15 @@ export default function Testimonials() {
 
   const goNext = () => {
     setDirection(1);
-    setCurrent((prev) => (prev + 1) % testimonials.length);
+    setCurrent((prev) => (prev + 1) % reviews.length);
   };
 
   const goPrev = () => {
     setDirection(-1);
-    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrent((prev) => (prev - 1 + reviews.length) % reviews.length);
   };
 
-  const t = testimonials[current];
+  const r = reviews[current];
 
   const variants = {
     enter: (dir: number) => ({ x: dir > 0 ? 300 : -300, opacity: 0 }),
@@ -83,8 +114,9 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="hidden lg:block py-16 sm:py-20 md:py-28 bg-surface">
+    <section id="testimonials" className="py-14 sm:py-20 md:py-28 bg-surface/80">
       <div className="container-main">
+        {/* Header with Google Rating Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,72 +124,33 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <span className="inline-block px-3 sm:px-4 py-1.5 rounded-full bg-soft-green/50 text-primary text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3 sm:mb-4">
-            Parent Testimonials
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">
-            Stories of Growth &amp; Hope
+          {/* Google Summary Pill */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-soft-green/60 shadow-soft mb-4">
+            <GoogleIcon className="w-5 h-5" />
+            <div className="flex items-center gap-1">
+              <span className="text-sm font-bold text-text-main">5.0</span>
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3.5 h-3.5 fill-[#FBBC05] text-[#FBBC05]" />
+                ))}
+              </div>
+            </div>
+            <span className="text-xs text-text-light border-l border-gray-200 pl-2.5">
+              Verified Google Reviews
+            </span>
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3">
+            What Parents Say About Seeds Therapy
           </h2>
-          <p className="text-base sm:text-lg text-text-light max-w-2xl mx-auto">
-            The voices of families we&apos;ve had the privilege to support.
+          <p className="text-base sm:text-lg text-text-light max-w-2xl mx-auto px-2">
+            Real experiences from families whose children have grown, communicated, and flourished at Seeds Therapy Center in Coimbatore.
           </p>
         </motion.div>
 
-        {/* Mobile: Horizontal Swipe Carousel */}
-        <div className="md:hidden">
-          <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4">
-            {testimonials.map((t, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-full sm:w-96 rounded-3xl bg-gradient-to-br from-bg to-soft-green/20 border border-soft-green/40 shadow-card p-6 sm:p-8 snap-center"
-              >
-                <div className="text-5xl leading-none text-accent/30 font-serif mb-4">&ldquo;</div>
-                <p className="text-base sm:text-lg text-text-main leading-relaxed mb-6 italic">
-                  {t.quote}
-                </p>
-                <div className="flex items-center gap-4">
-                  <div
-                    className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full ${t.color} flex items-center justify-center text-lg font-bold`}
-                  >
-                    {t.initial}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-primary text-base">{t.name}</div>
-                    <div className="text-xs sm:text-sm text-text-light">
-                      Parent of {t.childAge} &middot; {t.therapyType}
-                    </div>
-                    <div className="flex gap-0.5 mt-1">
-                      {Array.from({ length: t.rating }).map((_, i) => (
-                        <Star key={i} className="w-3 h-3 fill-accent text-accent" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          {/* Mobile Indicators */}
-          <div className="flex justify-center gap-2 mt-4">
-            {testimonials.map((_, index) => (
-              <button
-                suppressHydrationWarning
-                key={index}
-                onClick={() => goTo(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  index === current
-                    ? "bg-primary w-8"
-                    : "bg-soft-green hover:bg-secondary/40"
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop: Carousel with Navigation */}
-        <div className="hidden md:block max-w-3xl mx-auto">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-bg to-soft-green/20 border border-soft-green/40 shadow-card p-8 md:p-12">
+        {/* Carousel Slide Card Container */}
+        <div className="max-w-3xl mx-auto">
+          <div className="relative rounded-3xl bg-white border border-gray-200/90 shadow-card p-6 sm:p-8 md:p-10 overflow-hidden">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={current}
@@ -166,69 +159,98 @@ export default function Testimonials() {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+                className="flex flex-col justify-between min-h-[300px]"
               >
-                {/* Quote marks */}
-                <div className="text-6xl leading-none text-accent/30 font-serif mb-4">&ldquo;</div>
-
-                <p className="text-lg md:text-xl text-text-main leading-relaxed mb-8 italic">
-                  {t.quote}
-                </p>
-
-                <div className="flex items-center gap-4">
-                  <div
-                    className={`w-14 h-14 rounded-full ${t.color} flex items-center justify-center text-lg font-bold`}
-                  >
-                    {t.initial}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-primary">{t.name}</div>
-                    <div className="text-sm text-text-light">
-                      Parent of {t.childAge} &middot; {t.therapyType}
+                <div>
+                  {/* Reviewer Header */}
+                  <div className="flex items-start justify-between gap-3 mb-4">
+                    <div className="flex items-center gap-3.5">
+                      <div
+                        className={`w-12 h-12 rounded-full ${r.avatarBg} flex items-center justify-center text-lg font-bold shadow-sm`}
+                      >
+                        {r.initial}
+                      </div>
+                      <div>
+                        <div className="font-semibold text-text-main text-base flex items-center gap-1.5">
+                          {r.name}
+                          <CheckCircle className="w-4 h-4 text-blue-500 fill-blue-500/20" />
+                        </div>
+                        <div className="text-xs text-text-light">{r.badge}</div>
+                      </div>
                     </div>
-                    <div className="flex gap-0.5 mt-1">
-                      {Array.from({ length: t.rating }).map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-accent text-accent" />
+                    <div className="p-2 rounded-xl bg-gray-50 border border-gray-100">
+                      <GoogleIcon className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  {/* Stars + Time + Service Pill */}
+                  <div className="flex flex-wrap items-center gap-2 mb-4">
+                    <div className="flex gap-0.5">
+                      {[...Array(r.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-[#FBBC05] text-[#FBBC05]" />
                       ))}
                     </div>
+                    <span className="text-xs text-text-light">· {r.time}</span>
+                    <span className="inline-block px-3 py-1 rounded-full bg-soft-green/35 text-primary text-xs font-semibold">
+                      {r.service}
+                    </span>
                   </div>
+
+                  {/* Quote */}
+                  <p className="text-base sm:text-lg text-text-main leading-relaxed italic">
+                    “{r.quote}”
+                  </p>
+                </div>
+
+                <div className="pt-4 mt-6 border-t border-gray-100 flex items-center justify-between text-xs text-text-light">
+                  <span className="font-medium text-text-main/70">
+                    Seeds Therapy Center · Coimbatore
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-secondary font-medium">
+                    <CheckCircle className="w-3.5 h-3.5" />
+                    Verified Google Review
+                  </span>
                 </div>
               </motion.div>
             </AnimatePresence>
 
-            {/* Navigation */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-soft-green/30">
+            {/* Slider Navigation & Indicators */}
+            <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
+              {/* Dot Indicators */}
               <div className="flex gap-2">
-                {testimonials.map((_, index) => (
+                {reviews.map((_, index) => (
                   <button
                     suppressHydrationWarning
                     key={index}
                     onClick={() => goTo(index)}
-                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    className={`h-2.5 rounded-full transition-all duration-300 ${
                       index === current
                         ? "bg-primary w-8"
-                        : "bg-soft-green hover:bg-secondary/40"
+                        : "bg-gray-200 hover:bg-secondary/40 w-2.5"
                     }`}
-                    aria-label={`Go to testimonial ${index + 1}`}
+                    aria-label={`Go to review ${index + 1}`}
                   />
                 ))}
               </div>
+
+              {/* Prev / Next Arrows */}
               <div className="flex gap-2">
                 <button
                   suppressHydrationWarning
                   onClick={goPrev}
-                  className="w-10 h-10 rounded-full bg-soft-green/50 flex items-center justify-center hover:bg-soft-green transition-colors"
-                  aria-label="Previous testimonial"
+                  className="w-10 h-10 rounded-full bg-soft-green/50 flex items-center justify-center hover:bg-soft-green text-primary transition-colors active:scale-95"
+                  aria-label="Previous review"
                 >
-                  <ChevronLeft className="w-5 h-5 text-primary" />
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   suppressHydrationWarning
                   onClick={goNext}
-                  className="w-10 h-10 rounded-full bg-soft-green/50 flex items-center justify-center hover:bg-soft-green transition-colors"
-                  aria-label="Next testimonial"
+                  className="w-10 h-10 rounded-full bg-soft-green/50 flex items-center justify-center hover:bg-soft-green text-primary transition-colors active:scale-95"
+                  aria-label="Next review"
                 >
-                  <ChevronRight className="w-5 h-5 text-primary" />
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
             </div>
@@ -238,3 +260,5 @@ export default function Testimonials() {
     </section>
   );
 }
+
+

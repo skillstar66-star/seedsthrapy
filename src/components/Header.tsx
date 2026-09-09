@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -22,7 +23,7 @@ export default function Header() {
         className="container-main flex items-center justify-between h-14 sm:h-16 md:h-20"
         aria-label="Main navigation"
       >
-        <a href="/" className="flex items-center gap-2 sm:gap-3 group">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
           <Image 
             src="/images/logo.png" 
             alt="Seeds Therapy Center" 
@@ -40,7 +41,7 @@ export default function Header() {
               THERAPY CENTER
             </span>
           </div>
-        </a>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
