@@ -13,6 +13,7 @@ import Script from "next/script";
 export const viewport = "width=device-width, initial-scale=1";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.seedstherapycenter.org"),
   title: "Child Therapy Center in Coimbatore | Seeds Therapy Center",
   description:
     "Seeds Therapy Center is a Best therapy center in Coimbatore offering occupational therapy, speech therapy, behavioral therapy, and early intervention.",
@@ -30,9 +31,6 @@ export const metadata: Metadata = {
     "ADHD therapy in Coimbatore",
     "ADHD therapy for childrens",
   ],
-  alternates: {
-    canonical: "https://www.seedstherapycenter.org",
-  },
   openGraph: {
     title: "Child Therapy Center in Coimbatore | Seeds Therapy Center",
     description:

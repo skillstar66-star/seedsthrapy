@@ -7,6 +7,9 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 export const metadata = {
   title: "Conditions We Support | Seeds Therapy Center",
   description: "Learn about the conditions we support, including Autism (ASD), ADHD, Developmental Delay, Speech Delay, and Sensory Processing Difficulties.",
+  alternates: {
+    canonical: "https://www.seedstherapycenter.org/conditions",
+  },
 };
 
 export default function ConditionsPage() {

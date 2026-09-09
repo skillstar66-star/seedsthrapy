@@ -181,6 +181,12 @@ const jsonLd = {
   ]
 };
 
+export const metadata = {
+  alternates: {
+    canonical: "https://www.seedstherapycenter.org",
+  },
+};
+
 export default function Home() {
   return (
     <>

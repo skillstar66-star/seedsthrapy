@@ -11,6 +11,9 @@ export const metadata = {
   title: "Pediatric Therapies in Coimbatore | Seeds Therapy Center",
   description:
     "Explore our pediatric therapy services including Occupational Therapy, Speech Therapy, Behavioral Therapy, and Early Intervention personalized for your child's developmental goals.",
+  alternates: {
+    canonical: "https://www.seedstherapycenter.org/therapies",
+  },
 };
 
 export default function TherapiesPage() {

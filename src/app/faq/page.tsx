@@ -6,6 +6,9 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 export const metadata = {
   title: "Parent FAQ | Seeds Therapy Center",
   description: "Get answers to frequently asked questions about pediatric occupational therapy, speech delay support, behavioral guidance, and assessment timing.",
+  alternates: {
+    canonical: "https://www.seedstherapycenter.org/faq",
+  },
 };
 
 export default function FAQPage() {

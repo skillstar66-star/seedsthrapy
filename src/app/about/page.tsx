@@ -8,6 +8,9 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 export const metadata = {
   title: "About Us | Seeds Therapy Center",
   description: "Learn about Seeds Therapy Center. We believe that every child deserves the chance to reach their full potential through personalized therapy.",
+  alternates: {
+    canonical: "https://www.seedstherapycenter.org/about",
+  },
 };
 
 export default function AboutPage() {
