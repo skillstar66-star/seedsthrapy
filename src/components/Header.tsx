@@ -48,7 +48,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-text-light hover:text-primary transition-colors duration-200"
+              className="text-sm font-bold text-text-main hover:text-primary transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -58,14 +58,14 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-3">
           <a
             href="tel:+919597469409"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 text-primary text-sm font-medium hover:bg-primary/5 transition-all duration-200"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-primary/20 text-primary text-sm font-bold hover:bg-primary/5 transition-all duration-200"
           >
             <Phone className="w-4 h-4" />
             <span>9597469409</span>
           </a>
           <a
             href="/contact"
-            className="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-medium hover:bg-primary/90 transition-all duration-200 shadow-soft"
+            className="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all duration-200 shadow-medium hover:shadow-card-hover active:scale-95"
           >
             Book a Consultation
           </a>

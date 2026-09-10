@@ -7,7 +7,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 export const metadata: Metadata = {
   title: "Contact Us & Book a Consultation | Seeds Therapy Center Coimbatore",
   description:
-    "Get in touch with Seeds Therapy Center in Coimbatore. Schedule an initial pediatric assessment, consultation, or visit our clinic at Babyama Women Wellness, Siddhapudur.",
+    "Get in touch with Seeds Therapy Center in Coimbatore. Schedule an initial pediatric assessment, consultation, or visit our clinic at Seeds Therapy Center, Siddhapudur.",
   keywords: [
     "Contact Seeds Therapy Center",
     "Book therapy appointment Coimbatore",
@@ -60,7 +60,7 @@ const contactJsonLd = {
         email: "seedstherapycenter@gmail.com",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "No-77, Babyama Women Wellness & Paediatric Centre, Siddhapudur",
+          streetAddress: "No-77, Seeds Therapy Center, Siddhapudur",
           addressLocality: "Coimbatore",
           addressRegion: "Tamil Nadu",
           postalCode: "641044",

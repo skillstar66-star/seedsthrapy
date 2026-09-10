@@ -76,18 +76,18 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <span className="inline-block px-3 sm:px-4 py-1.5 rounded-full bg-accent/15 text-accent text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3 sm:mb-4">
+          <span className="inline-block px-3.5 sm:px-4 py-1.5 rounded-full bg-accent/20 text-accent text-xs sm:text-sm font-bold uppercase tracking-wider mb-3 sm:mb-4 border border-accent/20">
             Frequently Asked Questions
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-3 sm:mb-4 tracking-tight">
             Questions Parents Ask
           </h2>
-          <p className="text-base sm:text-lg text-text-light max-w-2xl mx-auto px-2 sm:px-0">
+          <p className="text-base sm:text-lg text-text-main max-w-2xl mx-auto px-2 sm:px-0 leading-relaxed font-normal">
             We understand you have questions. Here are answers to the ones we hear most often.
           </p>
         </motion.div>
 
-        <div className="space-y-2.5 sm:space-y-3">
+        <div className="space-y-3 sm:space-y-3.5">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
@@ -98,17 +98,17 @@ export default function FAQ() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="rounded-2xl border border-soft-green/40 overflow-hidden shadow-soft"
+                className="rounded-2xl border-2 border-soft-green/60 overflow-hidden shadow-sm bg-white"
               >
                 <button
                   suppressHydrationWarning
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full flex items-center justify-between gap-3 sm:gap-4 px-4 sm:px-6 py-4 sm:py-5 text-left bg-gradient-to-r from-bg to-surface hover:from-soft-green/20 hover:to-soft-green/10 transition-colors duration-200 min-h-14 sm:min-h-auto active:bg-soft-green/30"
+                  className="w-full flex items-center justify-between gap-3 sm:gap-4 px-4 sm:px-6 py-4 sm:py-5 text-left bg-white hover:bg-soft-green/20 transition-colors duration-200 min-h-14 sm:min-h-auto active:bg-soft-green/30"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-base font-semibold text-primary pr-2">{faq.q}</span>
+                  <span className="text-base sm:text-lg font-bold text-primary pr-2">{faq.q}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-secondary flex-shrink-0 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
@@ -122,7 +122,7 @@ export default function FAQ() {
                       transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-4 sm:px-6 pb-4 sm:pb-5 pt-1 text-text-light leading-relaxed text-base">
+                      <div className="px-4 sm:px-6 pb-5 sm:pb-6 pt-1 text-text-main leading-relaxed text-sm sm:text-base md:text-lg border-t border-soft-green/40">
                         {faq.a}
                       </div>
                     </motion.div>

@@ -64,13 +64,13 @@ export default function JourneySection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <span className="inline-block px-3 sm:px-4 py-1.5 rounded-full bg-accent/15 text-accent text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3 sm:mb-4">
+          <span className="inline-block px-3.5 sm:px-4 py-1.5 rounded-full bg-accent/20 text-accent text-xs sm:text-sm font-bold uppercase tracking-wider mb-3 sm:mb-4 border border-accent/20">
             The Journey
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-3 sm:mb-4 tracking-tight">
             Your Child&apos;s Development Journey
           </h2>
-          <p className="text-base sm:text-lg text-text-light max-w-2xl mx-auto px-2 sm:px-0">
+          <p className="text-base sm:text-lg text-text-main max-w-2xl mx-auto px-2 sm:px-0 leading-relaxed font-normal">
             A clear, supportive path from first contact to lasting growth and independence.
           </p>
         </motion.div>
@@ -97,10 +97,10 @@ export default function JourneySection() {
                     <div className="relative flex justify-center mb-4 sm:mb-5">
                       {/* Connecting line for desktop (between items in a row) */}
                       {(index === 0 || index === 3) && (
-                        <div className="hidden lg:block absolute top-1/2 left-1/2 w-[calc(100%+2rem)] h-0.5 bg-gradient-to-r from-secondary/20 to-accent/20 -translate-y-1/2 z-0" />
+                        <div className="hidden lg:block absolute top-1/2 left-1/2 w-[calc(100%+2rem)] h-0.5 bg-gradient-to-r from-secondary/30 to-accent/30 -translate-y-1/2 z-0" />
                       )}
                       {(index === 1 || index === 4) && (
-                        <div className="hidden lg:block absolute top-1/2 left-1/2 w-[calc(100%+2rem)] h-0.5 bg-gradient-to-r from-accent/20 to-secondary/20 -translate-y-1/2 z-0" />
+                        <div className="hidden lg:block absolute top-1/2 left-1/2 w-[calc(100%+2rem)] h-0.5 bg-gradient-to-r from-accent/30 to-secondary/30 -translate-y-1/2 z-0" />
                       )}
 
                       <button
@@ -110,12 +110,12 @@ export default function JourneySection() {
                         onMouseLeave={() => setActiveStep(null)}
                         className={`relative z-10 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 min-h-14 ${isActive
                             ? "bg-primary shadow-medium scale-110"
-                            : "bg-surface border-2 border-soft-green hover:border-primary/30 shadow-soft active:scale-95"
+                            : "bg-white border-2 border-soft-green hover:border-primary/50 shadow-soft active:scale-95"
                           }`}
                         aria-label={`View details for step ${item.step}: ${item.title}`}
                       >
                         <Icon
-                          className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-secondary"
+                          className={`w-6 h-6 transition-colors duration-300 ${isActive ? "text-white" : "text-primary"
                             }`}
                         />
 
@@ -127,8 +127,8 @@ export default function JourneySection() {
                       className={`text-center transition-all duration-300 px-2 sm:px-0 ${isActive ? "scale-105" : ""
                         }`}
                     >
-                      <h3 className="text-base sm:text-lg font-semibold text-primary mb-2">{item.title}</h3>
-                      <p className="text-xs sm:text-sm text-text-light leading-relaxed">
+                      <h3 className="text-base sm:text-lg font-bold text-primary mb-2">{item.title}</h3>
+                      <p className="text-xs sm:text-sm md:text-base text-text-main leading-relaxed font-medium">
                         {item.desc}
                       </p>
                     </div>

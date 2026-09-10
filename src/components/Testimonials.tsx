@@ -125,32 +125,32 @@ export default function Testimonials() {
           className="text-center mb-10 sm:mb-14"
         >
           {/* Google Summary Pill */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-soft-green/60 shadow-soft mb-4">
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-soft-green shadow-soft mb-4">
             <GoogleIcon className="w-5 h-5" />
-            <div className="flex items-center gap-1">
-              <span className="text-sm font-bold text-text-main">5.0</span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-sm font-extrabold text-text-main">5.0</span>
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-[#FBBC05] text-[#FBBC05]" />
+                  <Star key={i} className="w-4 h-4 fill-[#FBBC05] text-[#FBBC05]" />
                 ))}
               </div>
             </div>
-            <span className="text-xs text-text-light border-l border-gray-200 pl-2.5">
+            <span className="text-xs sm:text-sm font-semibold text-text-main border-l border-gray-200 pl-2.5">
               Verified Google Reviews
             </span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-3 tracking-tight">
             What Parents Say About Seeds Therapy
           </h2>
-          <p className="text-base sm:text-lg text-text-light max-w-2xl mx-auto px-2">
+          <p className="text-base sm:text-lg text-text-main max-w-2xl mx-auto px-2 leading-relaxed font-normal">
             Real experiences from families whose children have grown, communicated, and flourished at Seeds Therapy Center in Coimbatore.
           </p>
         </motion.div>
 
         {/* Carousel Slide Card Container */}
         <div className="max-w-3xl mx-auto">
-          <div className="relative rounded-3xl bg-white border border-gray-200/90 shadow-card p-6 sm:p-8 md:p-10 overflow-hidden">
+          <div className="relative rounded-3xl bg-white border-2 border-soft-green/60 shadow-card p-6 sm:p-8 md:p-10 overflow-hidden">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={current}
@@ -172,11 +172,11 @@ export default function Testimonials() {
                         {r.initial}
                       </div>
                       <div>
-                        <div className="font-semibold text-text-main text-base flex items-center gap-1.5">
+                        <div className="font-bold text-text-main text-base sm:text-lg flex items-center gap-1.5">
                           {r.name}
                           <CheckCircle className="w-4 h-4 text-blue-500 fill-blue-500/20" />
                         </div>
-                        <div className="text-xs text-text-light">{r.badge}</div>
+                        <div className="text-xs sm:text-sm font-medium text-text-light">{r.badge}</div>
                       </div>
                     </div>
                     <div className="p-2 rounded-xl bg-gray-50 border border-gray-100">
@@ -191,24 +191,24 @@ export default function Testimonials() {
                         <Star key={i} className="w-4 h-4 fill-[#FBBC05] text-[#FBBC05]" />
                       ))}
                     </div>
-                    <span className="text-xs text-text-light">· {r.time}</span>
-                    <span className="inline-block px-3 py-1 rounded-full bg-soft-green/35 text-primary text-xs font-semibold">
+                    <span className="text-xs sm:text-sm font-medium text-text-light">· {r.time}</span>
+                    <span className="inline-block px-3 py-1 rounded-full bg-soft-green text-primary text-xs sm:text-sm font-bold border border-primary/10">
                       {r.service}
                     </span>
                   </div>
 
                   {/* Quote */}
-                  <p className="text-base sm:text-lg text-text-main leading-relaxed italic">
+                  <p className="text-base sm:text-lg md:text-xl text-text-main leading-relaxed font-normal">
                     “{r.quote}”
                   </p>
                 </div>
 
-                <div className="pt-4 mt-6 border-t border-gray-100 flex items-center justify-between text-xs text-text-light">
-                  <span className="font-medium text-text-main/70">
+                <div className="pt-4 mt-6 border-t border-gray-100 flex items-center justify-between text-xs sm:text-sm text-text-main">
+                  <span className="font-semibold text-primary">
                     Seeds Therapy Center · Coimbatore
                   </span>
-                  <span className="inline-flex items-center gap-1 text-secondary font-medium">
-                    <CheckCircle className="w-3.5 h-3.5" />
+                  <span className="inline-flex items-center gap-1 text-secondary font-bold">
+                    <CheckCircle className="w-4 h-4" />
                     Verified Google Review
                   </span>
                 </div>

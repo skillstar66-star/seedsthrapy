@@ -53,23 +53,23 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-10 md:mb-14 max-w-3xl mx-auto"
         >
-          <span className="inline-block px-3 sm:px-4 py-1.5 rounded-full bg-soft-green/50 text-primary text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-soft-green text-primary border border-primary/15 text-xs sm:text-sm font-bold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4 shadow-sm">
             Why Parents Trust Us
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-3 sm:mb-4 tracking-tight">
             Compassion. Expertise. Results That Matter.
           </h2>
-          <p className="text-base sm:text-lg text-text-light mb-4">
+          <p className="text-base sm:text-lg text-text-main mb-3 leading-relaxed font-normal">
             Parents do not just want therapy. They want clarity, progress, and a team they can trust. That is why our approach is built around support, consistency, and measurable growth.
           </p>
-          <p className="text-base sm:text-lg text-text-main font-medium">
+          <p className="text-base sm:text-lg text-text-main font-semibold">
             We do not believe in one-size-fits-all therapy. Every session is designed to meet your child where they are and help them move forward with confidence, one step at a time.
           </p>
         </motion.div>
 
         {/* Mobile/Tablet: Horizontal Carousel */}
         <div className="md:hidden">
-          <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide pb-2">
+          <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide pb-3">
             {trustPoints.map((item, index) => {
               const Icon = item.icon;
               return (
@@ -79,12 +79,12 @@ export default function WhyChooseUs() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="flex-shrink-0 w-[80vw] sm:w-80 flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-bg to-surface border border-soft-green/40 shadow-card snap-start hover:shadow-card-hover transition-all duration-300"
+                  className="flex-shrink-0 w-[80vw] sm:w-80 flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white border-2 border-soft-green/60 shadow-card snap-start hover:shadow-card-hover transition-all duration-300"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-accent/15 flex items-center justify-center flex-shrink-0">
                     <Icon className="w-5 sm:w-6 h-5 sm:h-6 text-accent" />
                   </div>
-                  <h3 className="text-sm sm:text-base font-semibold text-primary leading-snug">{item.title}</h3>
+                  <h3 className="text-sm sm:text-base font-bold text-primary leading-snug">{item.title}</h3>
                 </motion.div>
               );
             })}
@@ -103,12 +103,12 @@ export default function WhyChooseUs() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 whileHover={{ y: -4 }}
-                className="group flex items-center gap-4 p-5 rounded-2xl bg-gradient-to-br from-bg to-surface border border-soft-green/40 shadow-card hover:shadow-card-hover transition-all duration-300"
+                className="group flex items-center gap-4 p-5 rounded-2xl bg-white border-2 border-soft-green/60 shadow-card hover:shadow-card-hover transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/25 transition-colors">
                   <Icon className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="text-base font-semibold text-primary leading-snug">{item.title}</h3>
+                <h3 className="text-base sm:text-lg font-bold text-primary leading-snug">{item.title}</h3>
               </motion.div>
             );
           })}

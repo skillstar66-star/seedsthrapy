@@ -21,36 +21,36 @@ export default function FinalCTA() {
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           className="max-w-3xl mx-auto text-center"
         >
-          <span className="inline-block px-3 sm:px-4 py-1.5 rounded-full bg-accent/15 text-accent text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
+          <span className="inline-block px-3.5 sm:px-4 py-1.5 rounded-full bg-accent/20 text-accent text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 sm:mb-6 border border-accent/20">
             Begin Your Journey
           </span>
 
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary mb-4 sm:mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-primary mb-4 sm:mb-6 leading-tight tracking-tight">
             Ready to Take the First Step?
           </h2>
 
-          <p className="text-base sm:text-lg md:text-xl text-text-light mb-8 sm:mb-10 max-w-xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-text-main mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed font-normal">
             Let’s work together to create a brighter, more confident future for your child. If you have concerns about speech, behavior, development, or learning, book an assessment and get the right guidance early.
           </p>
 
           <div className="flex flex-col sm:flex-row sm:justify-center gap-3 sm:gap-4">
             <a
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-4 rounded-full bg-primary text-white font-semibold text-base sm:text-base hover:bg-primary/90 transition-all duration-200 shadow-medium hover:shadow-card-hover active:scale-95"
+              className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-primary text-white font-bold text-base hover:bg-primary/90 transition-all duration-200 shadow-medium hover:shadow-card-hover active:scale-95"
             >
               Schedule Assessment
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="tel:+919597469409"
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-4 rounded-full border-2 border-primary/20 text-primary font-semibold text-base sm:text-base hover:bg-primary/5 transition-all duration-200 active:scale-95"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full border-2 border-primary/25 bg-white/80 text-primary font-bold text-base hover:bg-primary/10 transition-all duration-200 active:scale-95 shadow-sm"
             >
               <Phone className="w-4 h-4" />
               Call Now
             </a>
           </div>
 
-          <p className="text-xs sm:text-sm text-text-light mt-6">
+          <p className="text-xs sm:text-sm text-text-main font-semibold mt-6">
             Need quick help? Reach out and speak with our team today.
           </p>
         </motion.div>

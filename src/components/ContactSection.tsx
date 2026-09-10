@@ -79,13 +79,13 @@ export default function ContactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <span className="inline-block px-3 sm:px-4 py-1.5 rounded-full bg-soft-green/50 text-primary text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3 sm:mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-soft-green text-primary border border-primary/15 text-xs sm:text-sm font-bold uppercase tracking-wider mb-3 sm:mb-4 shadow-sm">
             Contact Us
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-3 sm:mb-4 tracking-tight">
             We&apos;re Here To Help
           </h2>
-          <p className="text-base sm:text-lg text-text-light max-w-2xl mx-auto px-2 sm:px-0">
+          <p className="text-base sm:text-lg text-text-main max-w-2xl mx-auto px-2 sm:px-0 leading-relaxed font-normal">
             Reach out to us for questions, assessments, or to schedule a visit. We look forward to hearing from you.
           </p>
         </motion.div>
@@ -97,14 +97,14 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-4 sm:space-y-6"
+            className="space-y-4 sm:space-y-5"
           >
             {[
               {
                 icon: MapPin,
                 label: "Visit Us",
-                value: "No-77, Babyama Women Wellness & Paediatric Centre, Siddhapudur, Coimbatore, Tamil Nadu 641044",
-                href: "https://maps.google.com/?q=Babyama+Women+Wellness+Coimbatore",
+                value: "No-77, Seeds Therapy Center, Siddhapudur, Coimbatore, Tamil Nadu 641044",
+                href: "https://maps.google.com/?q=Seeds+Therapy+Center+Coimbatore",
               },
               {
                 icon: Phone,
@@ -127,23 +127,23 @@ export default function ContactSection() {
             ].map((item, index) => {
               const Icon = item.icon;
               return (
-                <div key={item.label} className="flex gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-bg border border-soft-green/40">
-                  <div className="w-10 sm:w-11 h-10 sm:h-11 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-5 h-5 text-secondary" />
+                <div key={item.label} className="flex gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-white border-2 border-soft-green/60 shadow-sm">
+                  <div className="w-10 sm:w-11 h-10 sm:h-11 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-5 h-5 text-primary" />
                   </div>
                   <div className="min-w-0">
-                    <div className="text-xs sm:text-sm font-semibold text-primary mb-0.5 sm:mb-1">{item.label}</div>
+                    <div className="text-sm sm:text-base font-bold text-primary mb-0.5 sm:mb-1">{item.label}</div>
                     {item.href ? (
                       <a
                         href={item.href}
                         target={item.href.startsWith("http") ? "_blank" : undefined}
                         rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="text-sm text-text-light hover:text-primary transition-colors whitespace-pre-line block"
+                        className="text-sm sm:text-base text-text-main font-medium hover:text-primary transition-colors whitespace-pre-line block"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <div className="text-sm text-text-light whitespace-pre-line">{item.value}</div>
+                      <div className="text-sm sm:text-base text-text-main font-medium whitespace-pre-line">{item.value}</div>
                     )}
                   </div>
                 </div>
@@ -155,14 +155,14 @@ export default function ContactSection() {
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-soft-green/60 to-soft-green/30 border border-soft-green hover:shadow-card-hover transition-all duration-200 group min-h-16 sm:min-h-auto"
+              className="flex items-center gap-3 p-4 sm:p-5 rounded-2xl bg-white border-2 border-primary/30 shadow-card hover:shadow-card-hover transition-all duration-200 group min-h-16 sm:min-h-auto"
             >
               <div className="w-10 sm:w-11 h-10 sm:h-11 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                 <MessageCircle className="w-5 h-5 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
-                <div className="text-xs sm:text-sm font-semibold text-primary">Chat with us on WhatsApp</div>
-                <div className="text-xs text-text-light">Quick responses during business hours</div>
+                <div className="text-sm sm:text-base font-bold text-primary">Chat with us on WhatsApp</div>
+                <div className="text-xs sm:text-sm text-text-main font-medium">Quick responses during business hours</div>
               </div>
               <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform flex-shrink-0" />
             </a>
@@ -174,21 +174,21 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-bg rounded-2xl p-5 sm:p-8 border border-soft-green/40 shadow-card flex flex-col justify-between"
+            className="bg-white rounded-2xl p-5 sm:p-8 border-2 border-soft-green/60 shadow-card flex flex-col justify-between"
           >
             <div>
-              <h3 className="text-base sm:text-lg font-semibold text-primary mb-4">Send Us a Message</h3>
+              <h3 className="text-lg sm:text-xl font-extrabold text-primary mb-4">Send Us a Message</h3>
 
               {/* Toggle Tab */}
-              <div className="flex bg-surface p-1 rounded-xl border border-soft-green/50 mb-6">
+              <div className="flex bg-bg p-1 rounded-xl border border-soft-green mb-6">
                 <button
                   suppressHydrationWarning
                   type="button"
                   onClick={() => setContactMethod("email")}
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-bold transition-all ${
                     contactMethod === "email"
                       ? "bg-primary text-white shadow-sm"
-                      : "text-text-light hover:text-primary"
+                      : "text-text-main hover:text-primary"
                   }`}
                 >
                   <Mail className="w-4 h-4" />
@@ -198,10 +198,10 @@ export default function ContactSection() {
                   suppressHydrationWarning
                   type="button"
                   onClick={() => setContactMethod("whatsapp")}
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-bold transition-all ${
                     contactMethod === "whatsapp"
                       ? "bg-primary text-white shadow-sm"
-                      : "text-text-light hover:text-primary"
+                      : "text-text-main hover:text-primary"
                   }`}
                 >
                   <MessageCircle className="w-4 h-4" />
@@ -234,17 +234,17 @@ export default function ContactSection() {
                 ) : (
                   <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
                     {status === "error" && (
-                      <div className="flex gap-2 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
+                      <div className="flex gap-2 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm font-medium">
                         <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                         <div>
-                          <span className="font-semibold">Submission failed:</span> {errorMessage}
+                          <span className="font-bold">Submission failed:</span> {errorMessage}
                         </div>
                       </div>
                     )}
 
                     <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                       <div>
-                        <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
+                        <label htmlFor="name" className="block text-xs sm:text-sm font-bold text-text-main mb-1.5 sm:mb-2">
                           Your Name
                         </label>
                         <input
@@ -254,12 +254,12 @@ export default function ContactSection() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all text-base"
+                          className="w-full px-4 py-3.5 rounded-xl border-2 border-soft-green bg-white text-text-main font-medium placeholder:text-text-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-base"
                           placeholder="Full name"
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
+                        <label htmlFor="email" className="block text-xs sm:text-sm font-bold text-text-main mb-1.5 sm:mb-2">
                           Email Address
                         </label>
                         <input
@@ -269,13 +269,13 @@ export default function ContactSection() {
                           required={contactMethod === "email"}
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all text-base"
+                          className="w-full px-4 py-3.5 rounded-xl border-2 border-soft-green bg-white text-text-main font-medium placeholder:text-text-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-base"
                           placeholder="your@email.com"
                         />
                       </div>
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
+                      <label htmlFor="phone" className="block text-xs sm:text-sm font-bold text-text-main mb-1.5 sm:mb-2">
                         Phone Number
                       </label>
                       <input
@@ -285,12 +285,12 @@ export default function ContactSection() {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all text-base"
+                        className="w-full px-4 py-3.5 rounded-xl border-2 border-soft-green bg-white text-text-main font-medium placeholder:text-text-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all text-base"
                         placeholder="Phone number"
                       />
                     </div>
                     <div>
-                      <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-text-main mb-1.5 sm:mb-2">
+                      <label htmlFor="message" className="block text-xs sm:text-sm font-bold text-text-main mb-1.5 sm:mb-2">
                         How can we help?
                       </label>
                       <textarea
@@ -300,7 +300,7 @@ export default function ContactSection() {
                         required
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full px-4 py-3.5 rounded-xl border border-soft-green bg-surface text-text-main placeholder:text-text-light/50 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all resize-none text-base"
+                        className="w-full px-4 py-3.5 rounded-xl border-2 border-soft-green bg-white text-text-main font-medium placeholder:text-text-light/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none text-base"
                         placeholder="Tell us about your child and how we can support your family..."
                       />
                     </div>
@@ -308,7 +308,7 @@ export default function ContactSection() {
                       suppressHydrationWarning
                       type="submit"
                       disabled={status === "loading"}
-                      className="w-full px-6 py-4 rounded-xl bg-primary text-white font-semibold hover:bg-primary/90 transition-all duration-200 shadow-soft active:scale-95 text-base min-h-14 flex items-center justify-center gap-2"
+                      className="w-full px-6 py-4 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-all duration-200 shadow-medium hover:shadow-card-hover active:scale-95 text-base min-h-14 flex items-center justify-center gap-2"
                     >
                       {status === "loading" ? (
                         <>

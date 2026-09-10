@@ -97,13 +97,13 @@ export default function ServicesSection({
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-10 md:mb-14"
         >
-          <span className="inline-block px-3 sm:px-4 py-1.5 rounded-full bg-soft-green/50 text-primary text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-soft-green text-primary border border-primary/15 text-xs sm:text-sm font-bold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4 shadow-sm">
             Our Therapies
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-2 sm:mb-3 md:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-3 sm:mb-4 tracking-tight">
             Personalized Therapies for Every Child
           </h2>
-          <p className="text-base sm:text-lg text-text-light max-w-3xl mx-auto px-2 sm:px-0">
+          <p className="text-base sm:text-lg text-text-main max-w-3xl mx-auto px-2 sm:px-0 leading-relaxed font-normal">
             Every child develops differently. Some need support with speech. Some need help with sensory processing, attention, behavior, or daily activities. At Seeds Therapy Center, we create therapy plans based on your child’s unique needs, strengths, and developmental goals.
           </p>
         </motion.div>
@@ -120,27 +120,27 @@ export default function ServicesSection({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="flex-shrink-0 w-[85vw] sm:w-96 bg-gradient-to-br from-bg to-surface rounded-2xl p-5 sm:p-6 border border-soft-green/40 shadow-card snap-start hover:shadow-card-hover transition-all duration-300 flex flex-col"
+                  className="flex-shrink-0 w-[85vw] sm:w-96 bg-white rounded-2xl p-5 sm:p-6 border-2 border-soft-green/60 shadow-card snap-start hover:shadow-card-hover transition-all duration-300 flex flex-col"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center mb-4 sm:mb-5">
-                    <Icon className="w-6 h-6 text-secondary" />
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 sm:mb-5">
+                    <Icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold text-primary mb-2 sm:mb-3">{service.title}</h3>
-                  <p className="text-sm text-text-light leading-relaxed mb-4">{service.desc}</p>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-primary mb-2 sm:mb-3">{service.title}</h3>
+                  <p className="text-sm sm:text-base text-text-main leading-relaxed mb-4">{service.desc}</p>
                   
                   <div className="mb-6 flex-grow">
-                    <p className="text-sm font-medium text-text-main mb-2">Best for children who need support with:</p>
-                    <ul className="space-y-1.5">
+                    <p className="text-sm sm:text-base font-bold text-primary mb-2.5">Best for children who need support with:</p>
+                    <ul className="space-y-2">
                       {service.bestFor.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-text-light">
-                          <CheckCircle2 className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
+                        <li key={i} className="flex items-start gap-2 text-sm sm:text-base text-text-main font-medium">
+                          <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-1" />
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <Link href={service.link} className="inline-flex items-center gap-2 text-primary font-semibold text-sm group hover:text-secondary transition-colors">
+                  <Link href={service.link} className="inline-flex items-center gap-2 text-primary font-bold text-sm sm:text-base group hover:text-secondary transition-colors mt-auto">
                     Learn More & Details
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -168,27 +168,27 @@ export default function ServicesSection({
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
                 whileHover={{ y: -6 }}
-                className="group flex flex-col bg-gradient-to-br from-bg to-surface rounded-2xl p-7 border border-soft-green/40 shadow-card hover:shadow-card-hover transition-all duration-300"
+                className="group flex flex-col bg-white rounded-2xl p-7 border-2 border-soft-green/60 shadow-card hover:shadow-card-hover transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-6 h-6 text-secondary" />
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-2xl font-semibold text-primary mb-3">{service.title}</h3>
-                <p className="text-sm text-text-light leading-relaxed mb-5">{service.desc}</p>
+                <h3 className="text-2xl font-extrabold text-primary mb-3">{service.title}</h3>
+                <p className="text-sm sm:text-base text-text-main leading-relaxed mb-5">{service.desc}</p>
                 
                 <div className="mb-6 flex-grow">
-                  <p className="text-sm font-medium text-text-main mb-3">Best for children who need support with:</p>
+                  <p className="text-sm sm:text-base font-bold text-primary mb-3">Best for children who need support with:</p>
                   <ul className="space-y-2">
                     {service.bestFor.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-text-light">
-                        <CheckCircle2 className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
+                      <li key={i} className="flex items-start gap-2 text-sm sm:text-base text-text-main font-medium">
+                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-1" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <Link href={service.link} className="inline-flex items-center gap-2 text-primary font-semibold group-hover:text-secondary transition-colors mt-auto">
+                <Link href={service.link} className="inline-flex items-center gap-2 text-primary font-bold text-sm sm:text-base group-hover:text-secondary transition-colors mt-auto">
                   Learn More & Details
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>

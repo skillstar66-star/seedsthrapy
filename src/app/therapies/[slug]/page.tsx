@@ -85,7 +85,7 @@ export default async function TherapyDetailPage({ params }: PageProps) {
         telephone: "+919597469409",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "No-77, Babyama Women Wellness & Paediatric Centre, Siddhapudur",
+          streetAddress: "No-77, Seeds Therapy Center, Siddhapudur",
           addressLocality: "Coimbatore",
           addressRegion: "Tamil Nadu",
           postalCode: "641044",
