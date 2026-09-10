@@ -44,7 +44,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-balance text-primary mb-1.5 sm:mb-2"
             >
-              Best Pediatric Occupational Therapy Center in Coimbatore
+              Best Child Therapy Center in Coimbatore
             </motion.h1>
 
             <motion.p
